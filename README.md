@@ -26,7 +26,10 @@ You can read it to see how I made Kanata run in the background as a system servi
 ---
 ## Features
 
-### 1) One-shot modifiers (what “one-shot” means)
+### 1) Base Layer Overrides
+- **Caps Lock** acts as **Left Control** during normal typing.
+
+### 2) One-shot modifiers (what “one-shot” means)
 Some keys in the NUM layer are **one-shot modifiers**. That means:
 
 - You tap the modifier once,
@@ -46,28 +49,32 @@ I have **Super+Space** bound to open Rofi. With one-shot Super I can do:
 This reduces awkward thumb stretches for Super/Alt combos.
 > Note: if you keep pressing (holding) Q the super key will keep pressed even though you already used the one-shot + key. This is very useful if you have multiple keys that work with the SUPER key, without keeping repeating the (one-shot + key) every time. (Same with alt and any one-shot key you make).
 
-### 2) NUM layer (hold Space)
+### 3) NUM layer (hold Space)
 When you **hold Space**, you get:
 - Home row numbers: `a..;` → `1..0`
 - Quick modifiers:
   - `Space+Q` = one-shot **Super**
   - `Space+W` = one-shot **Alt**
-- Function keys on the right side of the top row (`r..o`): `F1..F5`, `F11`
+- Function keys on the right side of the top row (`r..u`, `o`): `F1..F4`, `F11`
 - `P` toggles **Caps Lock**
 - `[ (next to P)` becomes **Delete**
 - `Space+Tab` becomes **Esc**
 - `Space+E (hold)` enters a navigation layer (arrows on `hjkl`)
+- `Space+Caps (tap)` becomes **Tab**
+- `Space+Caps (hold)` enters a symbols layer (SYM)
 - `Space + '` → **Backspace** (handy while typing numbers)
 
-### 3) SYM layer (hold Space + hold Caps)
+### 4) SYM layer (hold Space + hold Caps)
 While holding Space, if you also **hold Caps/Ctrl**, you enter a symbols layer:
 - Home row becomes `! @ # $ % ^ & * ( )`
 - Above home row:
   - `q` = `` ` ``
   - `w` = `~`
   - plus quick access to `{ } [ ] < > \ |`
+- Below home row: 
+  - quick access to `- _ = + * / ?`
 
-### 4) NAV layer (hold Space + hold E)
+### 5) NAV layer (hold Space + hold E)
 While holding Space, hold `E` to enter navigation:
 - `h j k l` → ← ↓ ↑ →
 
@@ -76,13 +83,14 @@ While holding Space, hold `E` to enter navigation:
 ## Cheatsheet
 
 ### BASE (normal)
-- Normal typing
+- Normal typing (Caps Lock acts as Left Control)
 - **Hold Space** → NUM
   
 ### NUM (hold Space)
 **Modifiers / controls**
 - `space+'` → **Backspace**
 - `Space+Tab` → **Esc**
+- `Space+Caps (tap)` → **Tab**
 - `Space+Q` → one-shot **Super**
 - `Space+W` → one-shot **Alt**
 - `Space+E (hold)` → **NAV**
@@ -93,7 +101,7 @@ While holding Space, hold `E` to enter navigation:
 - `Space + A S D F G H J K L ;` → `1 2 3 4 5 6 7 8 9 0`
 
 **F-keys + delete**
-- `Space + R T Y U I` → `F1 F2 F3 F4 F5`
+- `Space + R T Y U` → `F1 F2 F3 F4`
 - `Space + O` → `F11`
 - `Space + [` → `Delete`
 
@@ -125,6 +133,15 @@ While holding Space, hold `E` to enter navigation:
 **Home row**
 - `A S D F G H J K L ;` → `! @ # $ % ^ & * ( )`
 
+**Below home row**
+- `Z` → `-`
+- `X` → `_`
+- `C` → `=`
+- `V` → `+`
+- `B` → `*`
+- `N` → `/`
+- `M` → `?`
+
 ### NAV (hold Space + hold E)
 - `H` → Left
 - `J` → Down
@@ -143,4 +160,3 @@ For brightness/volume, bind XF86 keys or use your WM (e.g. Hyprland + brightness
 Before restarting the service:
 ```bash
 sudo kanata --check -c /etc/kanata/kanata.kbd
-```
